@@ -23,7 +23,7 @@ public class KafkaProducerSample1 {
         int counter =1;
         try {
             while ((msg = reader.readLine()) != null) {
-                ProducerRecord<String, String> record = new ProducerRecord<>("topic2", Integer.toString(++counter), msg);
+                ProducerRecord<String, String> record = new ProducerRecord<>("topic2", Integer.toString(counter++), msg);
                 producer.send(record);
                 System.out.println(msg);
                 Thread.sleep(500);
